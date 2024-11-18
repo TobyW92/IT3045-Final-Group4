@@ -21,5 +21,21 @@ namespace IT3045_Final_Group4.Data
         {
             return _context.Sample.Where(x => x.Id.Equals(id)).FirstOrDefault();
         }
+
+        public Sample RemoveItemById(int id)
+        {
+            var team = this.GetItemById(id);
+            if (team == null) return null;
+            try
+            {
+                _context.Sample.Remove(team);
+                _context.SaveChanges();
+                return team;
+            }
+            catch (Exception)
+            {
+                return new Sample();
+            }
+        }
     }
 }

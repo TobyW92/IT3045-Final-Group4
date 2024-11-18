@@ -38,10 +38,16 @@ namespace IT3045_Final_Group4.Controllers
 
         }
 
-        //[HttpDelete("id")]
-        //public IActionResult DeleteById(int id)
-        //{
-
-        //}
+        [HttpDelete]
+        public IActionResult DeleteById(int id)
+        {
+            var item = _context.RemoveItemById(id);
+            if (item == null) return NotFound(id);
+            if (string.IsNullOrEmpty(item.SampleName))
+            {
+                return StatusCode(500, "An erorr occoured while processing your request");
+            }
+            return Ok();
+        }
     }
 }
