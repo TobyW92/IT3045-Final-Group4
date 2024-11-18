@@ -1,0 +1,6 @@
+@IT3045_Final_Group4_HostAddress = http://localhost:5130
+
+GET {{IT3045_Final_Group4_HostAddress}}/sample/
+Accept: application/json
+
+###
