@@ -40,6 +40,7 @@ namespace IT3045_Final_Group4.Data
             }
         }
 
+        // Comment to delete later
         public int? UpdateItem(Sample item)
         {
             var itemToUpdate = this.GetItemById(item.Id);
