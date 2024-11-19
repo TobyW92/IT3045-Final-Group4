@@ -18,7 +18,8 @@ namespace IT3045_Final_Group4.Controllers
             _logger = logger;
             _context = context;
         }
-
+        
+        // READ - GET all team members
         [HttpGet]
        public IActionResult Get()
         {
@@ -26,6 +27,7 @@ namespace IT3045_Final_Group4.Controllers
             return Ok(teamMembers);
         }
 
+        // READ - GET a team member by id
         [HttpGet("id")]
          public IActionResult GetById(int id)
         {
@@ -37,6 +39,7 @@ namespace IT3045_Final_Group4.Controllers
             return Ok(teamMember);
         }
 
+        // CREATE - POST to add a new team member
         [HttpPost]
         public IActionResult Post([FromBody] TeamMember teamMember)
         {
@@ -49,6 +52,7 @@ namespace IT3045_Final_Group4.Controllers
             return CreatedAtAction(nameof(GetById), new { id = teamMember.Id }, teamMember);
         }
 
+        // UPDATE - PUT to update an existing team member
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] TeamMember teamMember)
         {
@@ -70,6 +74,7 @@ namespace IT3045_Final_Group4.Controllers
             return Ok(existingMember);
         }
 
+        // DELETE - to delete a team member by id
         [HttpDelete("id")]
         public IActionResult DeleteById(int id)
         {
