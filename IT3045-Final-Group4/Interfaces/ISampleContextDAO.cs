@@ -6,5 +6,11 @@ namespace IT3045_Final_Group4.Interfaces
     {
         List<Sample> GetAllItems();
         Sample GetItemById(int id);
+
+        int? RemoveItemById(int id);
+
+        int? UpdateItem(Sample item);
+
+        int? Add(Sample item);
     }
 }
