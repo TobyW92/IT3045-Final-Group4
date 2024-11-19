@@ -8,6 +8,7 @@ namespace IT3045_Final_Group4.Data
         public SampleContext(DbContextOptions<SampleContext> options) : base(options) { }
 
         // My changes
+        // More changes
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Models.Sample>().HasData(
