@@ -65,5 +65,24 @@ namespace IT3045_Final_Group4.Data
                 return 0;
             }
         }
+
+        public int? Add(Sample item)
+        {
+            var itemToAdd = _context.Sample.Where(x => x.SampleName.Equals(item.SampleName)).FirstOrDefault();
+
+            if (itemToAdd != null) return null;
+
+            try
+            {
+                _context.Sample.Add(item);
+                _context.SaveChanges();
+                return 1;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+            
+        }
     }
 }

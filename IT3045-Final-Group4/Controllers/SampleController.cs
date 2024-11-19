@@ -68,5 +68,17 @@ namespace IT3045_Final_Group4.Controllers
 
             return Ok();
         }
+
+        [HttpPost]
+        public IActionResult Post(Sample item)
+        {
+            var result = _context.Add(item);
+
+            if (result == null) return StatusCode(500, "Item with that name already exists");
+
+            if (result == 0) return StatusCode(500, "An error occured while processign your request");
+
+            return Ok();
+        }
     }
 }
