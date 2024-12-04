@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using IT3045_Final_Group4.Data;
 using IT3045_Final_Group4.Interfaces;
+using IT3045_Final_Group4.Models;
 
 namespace IT3045_Final_Group4.Controllers
 {
@@ -18,7 +19,7 @@ namespace IT3045_Final_Group4.Controllers
             _logger = logger;
             _context = context;
         }
-        
+
         // READ - GET all team members
         [HttpGet]
        public IActionResult Get()

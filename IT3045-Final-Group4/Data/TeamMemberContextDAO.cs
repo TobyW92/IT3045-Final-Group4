@@ -37,7 +37,7 @@ namespace IT3045_Final_Group4.Data
 
         public void DeleteMember(int id)
         {
-            // find team member by id and delete
+            // find team member by id
             var member = _context.TeamMembers.FirstOrDefault(x => x.Id == id);
             if (member != null)
             {
@@ -46,4 +46,3 @@ namespace IT3045_Final_Group4.Data
             }
         }
     }
-}

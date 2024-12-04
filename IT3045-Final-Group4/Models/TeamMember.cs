@@ -8,8 +8,8 @@ namespace IT3045_Final_Group4.Models
 
         public DateTime Birthdate { get; set; }
 
-        public string CollegeProgram {get; set; }
+        public string CollegeProgram { get; set; }
 
-        public string YearInProgram ( get; set;)
+        public string YearInProgram { get; set; }
     }
 }
