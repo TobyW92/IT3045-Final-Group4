@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerDocument();
 
 // Add Context Scope
-builder.Services.AddScoped<ISampleContextDAO, SampleContextDAO>();
+builder.Services.AddScoped<ITreeTableContextDAO, TreeTableContextDAO>();
 
 // Add DB Context
 builder.Services.AddDbContext<SampleContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
