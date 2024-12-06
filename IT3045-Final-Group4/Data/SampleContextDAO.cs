@@ -1,4 +1,4 @@
-﻿using IT3045_Final_Group4.Interfaces;
+using IT3045_Final_Group4.Interfaces;
 using IT3045_Final_Group4.Models;
 
 namespace IT3045_Final_Group4.Data
@@ -52,7 +52,7 @@ namespace IT3045_Final_Group4.Data
             {
                 itemToUpdate.SampleNull = item.SampleNull;
             }
-
+            
 
             try
             {
@@ -82,7 +82,7 @@ namespace IT3045_Final_Group4.Data
             {
                 return 0;
             }
-
+            
         }
     }
 }
