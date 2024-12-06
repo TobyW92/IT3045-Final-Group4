@@ -1,4 +1,5 @@
 ﻿using IT3045_Final_Group4.Models;
+using IT3045_Final_Group4.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,26 +16,26 @@ namespace IT3045_Final_Group4.Data
         }
 
         // Get all trees
-        public List<TreeTableModel> GetAllTrees()
+        public List<TreeTable> GetAllTrees()
         {
             return _context.Trees.ToList();
         }
 
         // Get tree by id
-        public TreeTableModel GetTreeById(int id)
+        public TreeTable GetTreeById(int id)
         {
             return _context.Trees.FirstOrDefault(x => x.Id == id);
         }
 
         // Add a new tree
-        public void AddTree(TreeTableModel tree)
+        public void AddTree(TreeTable tree)
         {
             _context.Trees.Add(tree);
             _context.SaveChanges();
         }
 
         // Update an existing tree
-        public void UpdateTree(TreeTableModel tree)
+        public void UpdateTree(TreeTable tree)
         {
             _context.Trees.Update(tree);
             _context.SaveChanges();

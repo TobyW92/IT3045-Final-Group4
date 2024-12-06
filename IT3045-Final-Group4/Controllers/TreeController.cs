@@ -40,7 +40,7 @@ namespace IT3045_Final_Group4.Controllers
 
         // CREATE - POST to add a new tree
         [HttpPost]
-        public IActionResult Post([FromBody] TreeTableModel tree)
+        public IActionResult Post([FromBody] TreeTable tree)
         {
             if (tree == null)
             {
@@ -53,7 +53,7 @@ namespace IT3045_Final_Group4.Controllers
 
         // UPDATE - PUT to update an existing tree
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] TreeTableModel tree)
+        public IActionResult Put(int id, [FromBody] TreeTable tree)
         {
             if (tree == null || tree.Id != id)
             {

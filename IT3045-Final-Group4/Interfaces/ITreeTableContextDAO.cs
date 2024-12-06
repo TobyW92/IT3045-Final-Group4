@@ -6,16 +6,16 @@ namespace IT3045_Final_Group4.Interfaces
     public interface ITreeTableContextDAO
     {
         // Get all trees
-        List<TreeTableModel> GetAllTrees();
+        List<TreeTable> GetAllTrees();
 
         // Get a specific tree by ID
-        TreeTableModel GetTreeById(int id);
+        TreeTable GetTreeById(int id);
 
         // Add a new tree
-        void AddTree(TreeTableModel tree);
+        void AddTree(TreeTable tree);
 
         // Update an existing tree
-        void UpdateTree(TreeTableModel tree);
+        void UpdateTree(TreeTable tree);
 
         // Delete a tree by ID
         void DeleteTree(int id);

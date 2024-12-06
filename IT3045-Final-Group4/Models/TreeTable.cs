@@ -1,6 +1,6 @@
 ﻿namespace IT3045_Final_Group4.Models
 {
-    public class TreeTableModel
+    public class TreeTable
     {
         // Primary Key
         public int Id { get; set; }
