@@ -69,15 +69,13 @@ namespace IT3045_Final_Group4.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Game game)
+        public IActionResult Post([FromBody] Game game)
         {
-            var result = _context.Add(game);
-
-            if (result == null) return StatusCode(500, "Item with that name already exists");
-
-            if (result == 0) return StatusCode(500, "An error occured while processign your request");
-
-            return Ok();
+            if (game == null)
+            {
+                return BadRequest("Invalid Game data.");
+            }
+            
         }
     }
 }
