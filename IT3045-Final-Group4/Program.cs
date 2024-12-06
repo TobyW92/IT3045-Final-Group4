@@ -13,9 +13,13 @@ builder.Services.AddSwaggerDocument();
 
 // Add Context Scope
 builder.Services.AddScoped<ISampleContextDAO, SampleContextDAO>();
+        // TEST
+builder.Services.AddScoped<ITeamMemberContextDAO, TeamMemberContextDAO>();
 
 // Add DB Context
 builder.Services.AddDbContext<SampleContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+        // TEST
+builder.Services.AddDbContext<TeamMemberContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection"))); 
 
 var app = builder.Build();
 
@@ -26,9 +30,12 @@ app.UseSwaggerUi();
 // Migrate DB
 using (var scope = app.Services.CreateScope())
 {
+    
     var services = scope.ServiceProvider;
     var db = services.GetRequiredService<SampleContext>();
-    db.Database.Migrate();
+    db.Database.Migrate(); 
+    var teamDb = services.GetRequiredService<TeamMemberContext>();
+teamDb.Database.Migrate(); // TEST 
 }
 
 // Configure the HTTP request pipeline.
