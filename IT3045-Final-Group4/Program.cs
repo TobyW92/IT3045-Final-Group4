@@ -12,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerDocument();
 
 // Add Context Scope
+builder.Services.AddScoped<ITreeTableContextDAO, TreeTableContextDAO>();
 builder.Services.AddScoped<ISampleContextDAO, SampleContextDAO>();
         // TEST
 builder.Services.AddScoped<ITeamMemberContextDAO, TeamMemberContextDAO>();

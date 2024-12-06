@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IT3045_Final_Group4.Migrations
 {
     [DbContext(typeof(SampleContext))]
-    [Migration("20241112025125_Initial")]
+    [Migration("20241206005046_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -58,6 +58,11 @@ namespace IT3045_Final_Group4.Migrations
                         {
                             Id = 3,
                             SampleName = "Name3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            SampleName = "Name4"
                         });
                 });
 #pragma warning restore 612, 618

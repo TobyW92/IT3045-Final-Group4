@@ -33,7 +33,8 @@ namespace IT3045_Final_Group4.Migrations
                 {
                     { 1, "Toby", null },
                     { 2, "Name2", null },
-                    { 3, "Name3", null }
+                    { 3, "Name3", null },
+                    { 4, "Name4", null }
                 });
         }
 

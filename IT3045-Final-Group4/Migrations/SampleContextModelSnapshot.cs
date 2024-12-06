@@ -55,6 +55,11 @@ namespace IT3045_Final_Group4.Migrations
                         {
                             Id = 3,
                             SampleName = "Name3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            SampleName = "Name4"
                         });
                 });
 #pragma warning restore 612, 618
