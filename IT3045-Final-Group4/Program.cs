@@ -15,11 +15,13 @@ builder.Services.AddSwaggerDocument();
 builder.Services.AddScoped<ITreeTableContextDAO, TreeTableContextDAO>();
 builder.Services.AddScoped<ISampleContextDAO, SampleContextDAO>();
 builder.Services.AddScoped<ITeamMemberContextDAO, TeamMemberContextDAO>();
+builder.Services.AddScoped<IGameContextDAO, GameContextDAO>();
 
 // Add DB Context
 builder.Services.AddDbContext<SampleContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
 builder.Services.AddDbContext<TeamMemberContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
 builder.Services.AddDbContext<TreeTableContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+builder.Services.AddDbContext<GameContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
 
 var app = builder.Build();
 
@@ -35,9 +37,11 @@ using (var scope = app.Services.CreateScope())
     var db = services.GetRequiredService<SampleContext>();
     //db.Database.Migrate(); 
     var teamDb = services.GetRequiredService<TeamMemberContext>();
-    //teamDb.Database.Migrate();
+    teamDb.Database.Migrate();
+    var gameDb = services.GetRequiredService<GameContext>();
+    gameDb.Database.Migrate();
     var treeDb = services.GetRequiredService<TreeTableContext>();
-    //treeDb.Database.Migrate();
+    treeDb.Database.Migrate();
 }
 
 // Configure the HTTP request pipeline.
