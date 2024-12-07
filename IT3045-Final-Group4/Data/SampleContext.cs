@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-
 namespace IT3045_Final_Group4.Data
 {
     public class SampleContext : DbContext
@@ -16,6 +15,7 @@ namespace IT3045_Final_Group4.Data
             );
         }
 
-        public DbSet<Models.Sample> Sample {  get; set; }
+        public DbSet<Models.Sample> Sample { get; set; }
+        public DbSet<Models.FavoriteBreakfastFood> FavoriteBreakfastFoods { get; set; }
     }
 }
