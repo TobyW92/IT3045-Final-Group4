@@ -12,12 +12,12 @@ namespace IT3045_Final_Group4.Data
             _context = context;
         }
 
-        public List<FavoriteBreakfastFood> GetAllItems()
+        public List<BreakfastFood> GetAllItems()
         {
             return _context.FavoriteBreakfastFoods.ToList();
         }
 
-        public FavoriteBreakfastFood GetItemById(int id)
+        public BreakfastFood GetItemById(int id)
         {
             return _context.FavoriteBreakfastFoods.Where(x => x.Id.Equals(id)).FirstOrDefault();
         }
@@ -41,7 +41,7 @@ namespace IT3045_Final_Group4.Data
         }
 
 
-        public int? UpdateItem(FavoriteBreakfastFood item)
+        public int? UpdateItem(BreakfastFood item)
         {
             var itemToUpdate = this.GetItemById(item.Id);
 
@@ -66,7 +66,7 @@ namespace IT3045_Final_Group4.Data
             }
         }
 
-        public int? Add(FavoriteBreakfastFood item)
+        public int? Add(BreakfastFood item)
         {
             var itemToAdd = _context.FavoriteBreakfastFoods.Where(x => x.Name.Equals(item.Name)).FirstOrDefault();
 

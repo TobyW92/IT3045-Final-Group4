@@ -9,38 +9,38 @@ namespace IT3045_Final_Group4.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Models.FavoriteBreakfastFood>().HasData(
-                new Models.FavoriteBreakfastFood
+            builder.Entity<Models.BreakfastFood>().HasData(
+                new Models.BreakfastFood
                 {
                     Id = 1,
                     Name = "Pancakes",
                     Beverage = "Orange Juice",
                     Popular = true,
-                    ServingSize = ServingSize.Medium,  // Set ServingSize as Medium
+                    ServingSize = "Medium",  // Set ServingSize as Medium
                     Calories = 350
                 },
-                new Models.FavoriteBreakfastFood
+                new Models.BreakfastFood
                 {
                     Id = 2,
                     Name = "Waffles",
                     Beverage = "Coffee",
                     Popular = true,
-                    ServingSize = ServingSize.Large,  // Set ServingSize as Large
+                    ServingSize = "Large",  // Set ServingSize as Large
                     Calories = 400
                 },
-                new Models.FavoriteBreakfastFood
+                new Models.BreakfastFood
                 {
                     Id = 3,
                     Name = "Omelette",
                     Beverage = "Tea",
                     Popular = true,
-                    ServingSize = ServingSize.Small,  // Set ServingSize as Small
+                    ServingSize = "Small",  // Set ServingSize as Small
                     Calories = 250
                 }
             );
         }
 
-        public DbSet<Models.FavoriteBreakfastFood> FavoriteBreakfastFoods { get; set; }
+        public DbSet<Models.BreakfastFood> FavoriteBreakfastFoods { get; set; }
     }
 }
 

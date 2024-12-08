@@ -13,9 +13,12 @@ builder.Services.AddSwaggerDocument();
 
 // Add Context Scope
 builder.Services.AddScoped<ISampleContextDAO, SampleContextDAO>();
+builder.Services.AddScoped<IBreakfastFoodContextDAO, BreakfastFoodContextDAO>();
 
 // Add DB Context
 builder.Services.AddDbContext<SampleContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+builder.Services.AddDbContext<BreakfastFoodContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+
 
 var app = builder.Build();
 
@@ -27,8 +30,8 @@ app.UseSwaggerUi();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var db = services.GetRequiredService<SampleContext>();
-    db.Database.Migrate();
+    var breakfastTable = services.GetRequiredService<BreakfastFoodContext>();
+    breakfastTable.Database.Migrate();
 }
 
 // Configure the HTTP request pipeline.
