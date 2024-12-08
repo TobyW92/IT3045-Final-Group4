@@ -35,7 +35,7 @@ using (var scope = app.Services.CreateScope())
     
     var services = scope.ServiceProvider;
     var db = services.GetRequiredService<SampleContext>();
-    //db.Database.Migrate(); 
+    db.Database.Migrate();
     var teamDb = services.GetRequiredService<TeamMemberContext>();
     teamDb.Database.Migrate();
     var gameDb = services.GetRequiredService<GameContext>();
