@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IT3045_Final_Group4.Migrations
 {
-    [DbContext(typeof(SampleContext))]
-    partial class SampleContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(BreakfastFoodContext))]
+    partial class BreakfastFoodContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace IT3045_Final_Group4.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("IT3045_Final_Group4.Models.Sample", b =>
+            modelBuilder.Entity("IT3045_Final_Group4.Models.BreakfastFood", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,32 +29,55 @@ namespace IT3045_Final_Group4.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("SampleName")
+                    b.Property<string>("Beverage")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SampleNull")
+                    b.Property<int>("Calories")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Popular")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ServingSize")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sample");
+                    b.ToTable("FavoriteBreakfastFoods");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            SampleName = "Toby"
+                            Beverage = "Orange Juice",
+                            Calories = 350,
+                            Name = "Pancakes",
+                            Popular = true,
+                            ServingSize = "Medium"
                         },
                         new
                         {
                             Id = 2,
-                            SampleName = "Name2"
+                            Beverage = "Coffee",
+                            Calories = 400,
+                            Name = "Waffles",
+                            Popular = true,
+                            ServingSize = "Large"
                         },
                         new
                         {
                             Id = 3,
-                            SampleName = "Name3"
+                            Beverage = "Tea",
+                            Calories = 250,
+                            Name = "Omelette",
+                            Popular = true,
+                            ServingSize = "Small"
                         });
                 });
 #pragma warning restore 612, 618
