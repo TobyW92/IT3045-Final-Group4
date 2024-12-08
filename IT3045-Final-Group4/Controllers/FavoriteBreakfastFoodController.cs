@@ -17,7 +17,6 @@ namespace IT3045_Final_Group4.Controllers
         }
 
         // GET method to retrieve data
-        // If no id is provided or if it's 0, returns the first 5 results
         [HttpGet]
         public IActionResult Get(int? id)
         {
@@ -52,7 +51,7 @@ namespace IT3045_Final_Group4.Controllers
             existingFood.Name = food.Name;
             existingFood.Beverage = food.Beverage;
             existingFood.Popular = food.Popular;
-            existingFood.ServingSize = food.ServingSize;
+            existingFood.ServingSize = food.ServingSize;  // Handling the enum correctly
             existingFood.Calories = food.Calories;
 
             // Saves the changes to the database
@@ -60,7 +59,6 @@ namespace IT3045_Final_Group4.Controllers
             return NoContent();
         }
 
-       
         // Deletes the food item from the database
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
@@ -74,4 +72,3 @@ namespace IT3045_Final_Group4.Controllers
         }
     }
 }
-

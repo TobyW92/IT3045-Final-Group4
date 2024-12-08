@@ -1,5 +1,12 @@
 ﻿namespace IT3045_Final_Group4.Models
 {
+    public enum ServingSize
+    {
+        Small = 1,
+        Medium = 2,
+        Large = 3
+    }
+
     public class FavoriteBreakfastFood
     {
         // Primary Key
@@ -15,7 +22,7 @@
         public bool Popular { get; set; }
 
         // Serving size (e.g., "Small", "Medium", "Large")
-        public string ServingSize { get; set; }
+        public ServingSize ServingSize { get; set; }  // Changed from string to ServingSize enum
 
         // Calories in the food item
         public int Calories { get; set; }
