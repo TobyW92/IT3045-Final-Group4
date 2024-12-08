@@ -8,10 +8,10 @@ namespace IT3045_Final_Group4.Controllers
     [Route("[controller]")]
     public class FavoriteBreakfastFoodController : ControllerBase
     {
-        private readonly SampleContext _context;
+        private readonly BreakfastFoodContext _context;
 
         // Constructor that initializes the context
-        public FavoriteBreakfastFoodController(SampleContext context)
+        public FavoriteBreakfastFoodController(BreakfastFoodContext context)
         {
             _context = context;
         }

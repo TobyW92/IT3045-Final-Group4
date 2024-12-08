@@ -7,12 +7,10 @@ namespace IT3045_Final_Group4.Data
     {
         public BreakfastFoodContext(DbContextOptions<BreakfastFoodContext> options) : base(options) { }
 
-        public DbSet<FavoriteBreakfastFood> FavoriteBreakfastFoods { get; set; }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<FavoriteBreakfastFood>().HasData(
-                new FavoriteBreakfastFood
+            builder.Entity<Models.FavoriteBreakfastFood>().HasData(
+                new Models.FavoriteBreakfastFood
                 {
                     Id = 1,
                     Name = "Pancakes",
@@ -21,7 +19,7 @@ namespace IT3045_Final_Group4.Data
                     ServingSize = ServingSize.Medium,  // Set ServingSize as Medium
                     Calories = 350
                 },
-                new FavoriteBreakfastFood
+                new Models.FavoriteBreakfastFood
                 {
                     Id = 2,
                     Name = "Waffles",
@@ -30,7 +28,7 @@ namespace IT3045_Final_Group4.Data
                     ServingSize = ServingSize.Large,  // Set ServingSize as Large
                     Calories = 400
                 },
-                new FavoriteBreakfastFood
+                new Models.FavoriteBreakfastFood
                 {
                     Id = 3,
                     Name = "Omelette",
@@ -41,6 +39,8 @@ namespace IT3045_Final_Group4.Data
                 }
             );
         }
+
+        public DbSet<Models.FavoriteBreakfastFood> FavoriteBreakfastFoods { get; set; }
     }
 }
 
