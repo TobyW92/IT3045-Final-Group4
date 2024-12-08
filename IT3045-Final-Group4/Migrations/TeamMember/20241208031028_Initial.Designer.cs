@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IT3045_Final_Group4.Migrations.TeamMember
 {
     [DbContext(typeof(TeamMemberContext))]
-    [Migration("20241204215937_Initial")]
+    [Migration("20241208031028_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

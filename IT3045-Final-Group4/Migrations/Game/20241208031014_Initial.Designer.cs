@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IT3045_Final_Group4.Migrations.Game
 {
     [DbContext(typeof(GameContext))]
-    [Migration("20241205201825_Initial")]
+    [Migration("20241208031014_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -32,16 +32,20 @@ namespace IT3045_Final_Group4.Migrations.Game
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Developer")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Developer")
-                        .HasColumnType("nvarchar(max)");
-                    
                     b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReleaseDate")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -51,42 +55,42 @@ namespace IT3045_Final_Group4.Migrations.Game
                     b.HasData(
                         new
                         {
-                            Id = 1, 
-                            Name = "Fallout 3", 
-                            Developer = "Bethesda Game Studios", 
-                            Genre = "Action RPG", 
+                            Id = 1,
+                            Developer = "Bethesda Game Studios",
+                            Genre = "Action RPG",
+                            Name = "Fallout 3",
                             ReleaseDate = "October 28, 2008"
                         },
                         new
                         {
-                            Id = 2, 
-                            Name = "Fallout 4", 
-                            Developer = "Bethesda Game Studios", 
-                            Genre = "Action RPG", 
+                            Id = 2,
+                            Developer = "Bethesda Game Studios",
+                            Genre = "Action RPG",
+                            Name = "Fallout 4",
                             ReleaseDate = "November 10, 2015"
                         },
                         new
                         {
-                            Id = 3, 
-                            Name = "The Elder Scrolls V: Skyrim", 
-                            Developer = "Bethesda Game Studios", 
-                            Genre = "Action RPG", 
+                            Id = 3,
+                            Developer = "Bethesda Game Studios",
+                            Genre = "Action RPG",
+                            Name = "The Elder Scrolls V: Skyrim",
                             ReleaseDate = "November 11, 2011"
                         },
                         new
                         {
-                            Id = 4, 
-                            Name = "Baldur's Gate 3", 
-                            Developer = "Larian Studios", 
-                            Genre = "Adventure RPG", 
+                            Id = 4,
+                            Developer = "Larian Studios",
+                            Genre = "Adventure RPG",
+                            Name = "Baldur's Gate 3",
                             ReleaseDate = "August 3, 2023"
                         },
                         new
                         {
-                            Id = 5, 
-                            Name = "Mass Effect 2", 
-                            Developer = "Bioware", 
-                            Genre = "Action RPG", 
+                            Id = 5,
+                            Developer = "Bioware",
+                            Genre = "Action RPG",
+                            Name = "Mass Effect 2",
                             ReleaseDate = "January 26, 2010"
                         });
                 });

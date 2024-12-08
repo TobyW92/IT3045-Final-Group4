@@ -21,7 +21,7 @@ namespace IT3045_Final_Group4.Migrations.Game
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Developer = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Genre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ReleaseDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReleaseDate = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,14 +30,14 @@ namespace IT3045_Final_Group4.Migrations.Game
 
             migrationBuilder.InsertData(
                 table: "Game",
-                columns: new[] { "Id", "Name", "Developer", "Genre", "ReleaseDate" },
+                columns: new[] { "Id", "Developer", "Genre", "Name", "ReleaseDate" },
                 values: new object[,]
                 {
-                    { 1, "Fallout 3", "Bethesda Game Studios", "Action RPG", "October 28, 2008" },
-                    { 2, "Fallout 4", "Bethesda Game Studios", "Action RPG", "November 10, 2015" },
-                    { 3, "The ELder Scrolls V: Skyrim", "Bethesda Game Studios", "Action RPG", "November 11, 2011" },
-                    { 4, "Baldur's Gate 3", "Larian Studios", "Adventure RPG", "August 3, 2023" },
-                    { 5, "Mass Effect 2", "Bioware", "Action RPG", "January 26, 2010" }
+                    { 1, "Bethesda Game Studios", "Action RPG", "Fallout 3", "October 28, 2008" },
+                    { 2, "Bethesda Game Studios", "Action RPG", "Fallout 4", "November 10, 2015" },
+                    { 3, "Bethesda Game Studios", "Action RPG", "The Elder Scrolls V: Skyrim", "November 11, 2011" },
+                    { 4, "Larian Studios", "Adventure RPG", "Baldur's Gate 3", "August 3, 2023" },
+                    { 5, "Bioware", "Action RPG", "Mass Effect 2", "January 26, 2010" }
                 });
         }
 

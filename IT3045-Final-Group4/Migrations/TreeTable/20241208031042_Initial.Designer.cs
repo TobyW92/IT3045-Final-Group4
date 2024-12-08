@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IT3045_Final_Group4.Migrations.TreeTable
 {
     [DbContext(typeof(TreeTableContext))]
-    [Migration("20241206013237_Initial")]
+    [Migration("20241208031042_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
