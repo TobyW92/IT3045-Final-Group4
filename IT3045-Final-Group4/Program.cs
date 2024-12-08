@@ -12,12 +12,16 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerDocument();
 
 // Add Context Scope
-builder.Services.AddScoped<ISampleContextDAO, SampleContextDAO>();
+builder.Services.AddScoped<ITreeTableContextDAO, TreeTableContextDAO>();
 builder.Services.AddScoped<IBreakfastFoodContextDAO, BreakfastFoodContextDAO>();
+builder.Services.AddScoped<ITeamMemberContextDAO, TeamMemberContextDAO>();
+builder.Services.AddScoped<IGameContextDAO, GameContextDAO>();
 
 // Add DB Context
-builder.Services.AddDbContext<SampleContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
 builder.Services.AddDbContext<BreakfastFoodContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+builder.Services.AddDbContext<TeamMemberContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+builder.Services.AddDbContext<TreeTableContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+builder.Services.AddDbContext<GameContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
 
 
 var app = builder.Build();
@@ -32,6 +36,12 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     var breakfastTable = services.GetRequiredService<BreakfastFoodContext>();
     breakfastTable.Database.Migrate();
+    var teamTable = services.GetRequiredService<TeamMemberContext>();
+    teamTable.Database.Migrate();
+    var gameTable = services.GetRequiredService<GameContext>();
+    gameTable.Database.Migrate();
+    var treeTable = services.GetRequiredService<TreeTableContext>();
+    treeTable.Database.Migrate();
 }
 
 // Configure the HTTP request pipeline.
